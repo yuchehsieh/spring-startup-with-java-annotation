@@ -11,7 +11,7 @@ public class Main {
                 ClassPathXmlApplicationContext("applicationContext.xml");
 
         // retrieve bean from the container
-        Coach theCoach = context.getBean("theSillyCoach", Coach.class);
+        Coach theCoach = context.getBean("tennisCoach", Coach.class);
 
         // call a method on bean
         System.out.println(theCoach.getDailyWorkout());
