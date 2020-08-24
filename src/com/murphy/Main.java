@@ -15,6 +15,7 @@ public class Main {
 
         // call a method on bean
         System.out.println(theCoach.getDailyWorkout());
+        System.out.println(theCoach.getFortune());
 
         // close context
         context.close();
