@@ -1,9 +1,13 @@
 package com.murphy;
 
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 @Component
 @Scope("prototype")
@@ -21,6 +25,16 @@ public class TennisCoach implements Coach {
 //        System.out.println("TennisCoach: inside doSomeCrazyStuff() method");
 //        this.fortuneService = fortuneService;
 //    }
+
+    @PostConstruct
+    public void doMyStartupStuff() {
+        System.out.println("TennisCoach: inside of doMyStartupStuff()");
+    }
+
+    @PreDestroy
+    public void doMyCleanupStuff() {
+        System.out.println("TennisCoach: inside of doMyCleanupStuff()");
+    }
 
     @Override
     public String getDailyWorkout() {
